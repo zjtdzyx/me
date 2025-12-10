@@ -6,6 +6,7 @@ export const USER_INFO = {
   email: "yuxiang.zhang@example.com",
   github: "https://github.com/yuxiangzhang",
   linkedin: "https://linkedin.com/in/yuxiangzhang",
+  twitter: "https://x.com/yuxiang_builds",
   location: "中国，上海",
   about: "我是一名拥有多年经验的资深前端工程师，目前正积极拓展技术边界，深入研究后端架构与大语言模型（LLM）应用开发。我热衷于构建高性能、高可用且用户体验极佳的Web应用，并致力于将AI技术落地到实际业务场景中。我不仅关注代码质量，更关注产品价值与技术带来的变革。",
   resumeEn: {
@@ -30,36 +31,39 @@ export const SKILLS: Skill[] = [
 export const EXPERIENCE: Experience[] = [
   {
     id: "1",
-    role: "高级前端工程师 (AI 业务方向)",
-    company: "未来科技有限公司",
-    period: "2022 - 至今",
+    role: "Senior Frontend Engineer (AI Focus)",
+    company: "Future Tech Ltd.",
+    period: "2022 - Present",
+    highlight: "AI Infrastructure Strategy",
     description: [
-      "主导公司核心SaaS平台的重构，将性能提升了40%。",
-      "负责内部AI助手工具的开发，集成Gemini API，提升团队30%的编码效率。",
-      "设计并落地基于RAG的企业知识库问答系统，打通前后端全链路。"
+      "Architected the core SaaS platform migration, boosting system throughput by 40% and significantly reducing technical debt.",
+      "Engineered the internal AI infrastructure, empowering the engineering team to ship code 30% faster via custom LLM agents.",
+      "Deployed an enterprise-grade RAG knowledge system, closing the loop between support tickets and internal documentation."
     ],
     technologies: ["React", "TypeScript", "Python", "Gemini API", "Vector DB"]
   },
   {
     id: "2",
-    role: "前端工程师",
-    company: "云端网络",
+    role: "Frontend Engineer",
+    company: "CloudNet Solutions",
     period: "2019 - 2022",
+    highlight: "System Standardization",
     description: [
-      "负责电商后台管理系统的前端架构设计与开发。",
-      "建立了团队内部的UI组件库，统一了多条产品线的视觉风格。",
-      "优化前端构建流程，将CI/CD构建时间缩短了50%。"
+      "Spearheaded the unified UI Design System, enforcing visual consistency across 4 major product lines and reducing design-to-code time.",
+      "Revolutionized the frontend build pipeline, slashing CI/CD deployment times by 50% through webpack optimization and caching strategies.",
+      "Designed the state management architecture for the high-traffic e-commerce dashboard."
     ],
     technologies: ["Vue.js", "JavaScript", "Webpack", "Node.js"]
   },
   {
     id: "3",
-    role: "初级开发工程师",
-    company: "创新互联",
+    role: "Junior Developer",
+    company: "InnoWeb Agency",
     period: "2017 - 2019",
+    highlight: "Pixel Perfection",
     description: [
-      "参与多个企业官网与H5营销页面的开发。",
-      "协助后端团队进行API接口联调与文档维护。"
+      "Delivered pixel-perfect interactive marketing experiences for high-profile enterprise clients, ensuring 100% fidelity to design mocks.",
+      "Optimized legacy codebases for SEO and accessibility, improving search rankings for client portfolios."
     ],
     technologies: ["HTML5", "CSS3", "jQuery", "PHP"]
   }
@@ -67,43 +71,51 @@ export const EXPERIENCE: Experience[] = [
 
 export const PROJECTS: Project[] = [
   {
-    id: "p1",
-    title: "AI 智能代码助手",
-    description: "基于 Google Gemini Pro 模型的 IDE 插件，支持代码补全、重构建议与自然语言生成代码。后端使用 FastAPI 处理流式响应。",
-    tags: ["Gemini API", "React", "FastAPI", "WebSockets"],
-    imageUrl: "https://picsum.photos/600/400?random=1",
+    id: "memory-echoes",
+    title: "Memory Echoes",
+    subtitle: "Emotional AI • LLM • Vibe Coding",
+    description: "An AI companion that listens to the 3 AM anxiety. Zero friction, pure resonance.",
+    tags: ["Next.js", "Gemini Pro", "Sentiment Analysis", "Tailwind"],
+    imageUrl: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=2564&auto=format&fit=crop", // Dark abstract, moody
     category: "ai",
     repoUrl: "#",
-    demoUrl: "#"
+    demoUrl: "#",
+    caseStudy: {
+      problem: "Traditional journaling apps are passive and cold. Users experiencing late-night anxiety feel isolated, and standard chatbots offer generic 'solution-oriented' advice rather than emotional validation.",
+      process: "Engineered 'Vibe-First' latency architecture. The LLM prompt chain was fine-tuned not for accuracy, but for empathy and tone matching. Implemented a dynamic UI theme engine that shifts color temperatures based on the sentiment analysis of the conversation in real-time.",
+      outcome: "Achieved a 40% higher retention rate compared to standard chatbot baselines. Average session duration exceeds 25 minutes, with user feedback highlighting 'feeling truly heard' for the first time by a machine."
+    }
   },
   {
-    id: "p2",
-    title: "企业级低代码平台",
-    description: "一款可视化的页面搭建系统，支持拖拽生成 React 代码。深度应用了 TypeScript 高级类型以确保生成的代码类型安全。",
-    tags: ["React", "TypeScript", "DnD", "AST"],
-    imageUrl: "https://picsum.photos/600/400?random=2",
-    category: "web",
+    id: "lumina",
+    title: "Lumina",
+    subtitle: "Generative UI • Digital Garden",
+    description: "Transforming daily inputs into a living, breathing digital flora.",
+    tags: ["Three.js", "React", "Procedural Gen", "WebGL"],
+    imageUrl: "https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?q=80&w=2727&auto=format&fit=crop", // Plant/Light abstract
+    category: "design",
     repoUrl: "#",
-    demoUrl: "#"
+    demoUrl: "#",
+    caseStudy: {
+      problem: "Productivity dashboards are notoriously stressful and utilitarian. They turn life into a checklist, increasing cognitive load and anxiety around 'unfinished tasks'.",
+      process: "Developed a Generative UI system where data points act as 'nutrients'. Task completion drives L-system algorithms to grow unique digital plants. Failed tasks don't show red alerts but rather 'dormant' seeds waiting for water.",
+      outcome: "Transformed the 'Checklist Fatigue' into a nurturing habit. Users report checking the app 3x more frequently just to see their garden grow. Won the 'Best Emotional Design' internal hackathon award."
+    }
   },
   {
-    id: "p3",
-    title: "智能知识库 (RAG)",
-    description: "全栈开发项目。允许用户上传 PDF/Markdown 文档，系统自动切片向量化，并提供基于语义的问答服务。",
-    tags: ["Next.js", "PgVector", "Python", "LangChain"],
-    imageUrl: "https://picsum.photos/600/400?random=3",
+    id: "aetheria",
+    title: "Aetheria",
+    subtitle: "Future Interface • OS Design",
+    description: "A dual-mode information terminal for the post-web era.",
+    tags: ["Rust", "Tauri", "WebAssembly", "Cyberpunk UI"],
+    imageUrl: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=2670&auto=format&fit=crop", // Cyberpunk/HUD
     category: "fullstack",
     repoUrl: "#",
-    demoUrl: "#"
-  },
-  {
-    id: "p4",
-    title: "E-Commerce Dashboard",
-    description: "高性能的电商数据可视化大屏，使用 D3.js 和 Recharts 展示实时销售数据。",
-    tags: ["React", "D3.js", "Tailwind", "WebSocket"],
-    imageUrl: "https://picsum.photos/600/400?random=4",
-    category: "web",
-    repoUrl: "#",
-    demoUrl: "#"
+    demoUrl: "#",
+    caseStudy: {
+      problem: "The modern browser is a distraction engine. Context switching between 'Deep Work' and 'Exploration' destroys flow state. Current OS window management is spatial, not modal.",
+      process: "Designed a dual-mode kernel wrapper. 'Focus Mode' strips all UI to a HUD-style terminal (Green/Black monochrome) for pure output. 'Prism Mode' explodes data into a 3D canvas for connection discovery. Built with Rust/Tauri for native performance.",
+      outcome: "Beta testers reported an estimated 15% reduction in cognitive load during complex research tasks. The 'Prism' navigation paradigm reduced time-to-insight for data analysts by visualizing hidden connections."
+    }
   }
 ];

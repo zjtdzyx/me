@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Globe, Printer, FileText } from 'lucide-react';
+import { Globe, Printer, FileText, QrCode, ShieldCheck, Download } from 'lucide-react';
 import { USER_INFO, EXPERIENCE, SKILLS } from '../constants';
 
 export const ResumeViewer: React.FC = () => {
@@ -19,20 +19,95 @@ export const ResumeViewer: React.FC = () => {
 
   if (!isOpen) {
     return (
-      <section id="resume" className="py-20 bg-white dark:bg-[#0d1117] border-t border-[#d0d7de] dark:border-[#30363d] transition-colors duration-300">
-        <div className="max-w-4xl mx-auto px-4 text-center">
-            <h2 className="text-3xl font-bold text-[#24292f] dark:text-[#c9d1d9] mb-8">我的简历</h2>
-            <div className="bg-[#f6f8fa] dark:bg-[#161b22] p-10 rounded-xl border border-[#d0d7de] dark:border-[#30363d] border-dashed flex flex-col items-center group hover:border-[#0969da] dark:hover:border-[#58a6ff] transition-colors">
-                <FileText size={64} className="text-[#8b949e] mb-4 group-hover:text-[#0969da] dark:group-hover:text-[#58a6ff] transition-colors" />
-                <p className="text-[#57606a] dark:text-[#8b949e] mb-6 font-medium">查看详细的 PDF 版简历，支持中英文切换与下载。</p>
-                <button 
-                    onClick={() => setIsOpen(true)}
-                    className="px-6 py-3 bg-[#24292f] dark:bg-[#21262d] hover:bg-[#0969da] dark:hover:bg-[#30363d] text-white dark:text-[#c9d1d9] border border-transparent dark:border-[#30363d] rounded-md font-semibold transition-colors flex items-center gap-2 shadow-sm"
-                >
-                    预览简历 <Globe size={18} />
-                </button>
+      <section id="resume" className="py-32 bg-[#f6f8fa] dark:bg-[#0d1117] relative overflow-hidden flex flex-col items-center justify-center transition-colors duration-300">
+        
+        {/* Background Grid - Aetheria Vibe */}
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] pointer-events-none"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-[#f6f8fa] via-transparent to-transparent dark:from-[#0d1117] pointer-events-none"></div>
+
+        <div className="max-w-4xl mx-auto px-4 text-center relative z-10 w-full">
+            <h2 className="text-3xl md:text-4xl font-bold text-[#24292f] dark:text-[#c9d1d9] mb-12 tracking-tight">
+              Ready to build the future together?
+            </h2>
+
+            {/* The Access Card */}
+            <div
+                onClick={() => setIsOpen(true)}
+                className="group relative w-full max-w-md mx-auto perspective-1000 cursor-pointer"
+            >
+                {/* Glow Effect behind the card */}
+                <div className="absolute -inset-1 bg-gradient-to-r from-[#00ff88] to-[#0969da] rounded-2xl opacity-20 blur-xl group-hover:opacity-40 transition-opacity duration-500"></div>
+
+                <div className="relative bg-[#0d1117] border border-[#30363d] p-1 rounded-2xl transform transition-all duration-300 group-hover:scale-105 group-hover:-rotate-1">
+                    
+                    {/* Inner Card Container */}
+                    <div className="bg-[#161b22] rounded-xl overflow-hidden relative">
+                         
+                        {/* Scanning Line Animation */}
+                        <div className="absolute top-0 left-0 w-full h-[2px] bg-[#00ff88] shadow-[0_0_15px_#00ff88] opacity-0 group-hover:opacity-100 group-hover:animate-[scan_2s_linear_infinite]"></div>
+
+                        {/* Top Bar (HUD Style) */}
+                        <div className="flex justify-between items-center px-6 py-4 border-b border-[#30363d] bg-[#0d1117]/50">
+                            <div className="flex items-center gap-2">
+                                <div className="w-2 h-2 bg-[#00ff88] rounded-full animate-pulse shadow-[0_0_8px_#00ff88]"></div>
+                                <span className="text-[10px] font-mono font-bold text-[#00ff88] tracking-[0.2em] uppercase">
+                                    Access_Level: Recruiter
+                                </span>
+                            </div>
+                            <QrCode size={20} className="text-[#30363d] group-hover:text-[#00ff88] transition-colors duration-300" />
+                        </div>
+
+                        {/* Main Body */}
+                        <div className="p-8 flex items-center gap-6">
+                            <div className="relative">
+                                <div className="w-16 h-16 bg-[#21262d] rounded-lg flex items-center justify-center border border-[#30363d] group-hover:border-[#00ff88]/50 transition-colors">
+                                    <ShieldCheck className="text-[#8b949e] group-hover:text-[#00ff88] transition-colors" size={32} />
+                                </div>
+                                {/* Corner Accents */}
+                                <div className="absolute -top-1 -left-1 w-2 h-2 border-t-2 border-l-2 border-[#30363d] group-hover:border-[#00ff88] transition-colors"></div>
+                                <div className="absolute -bottom-1 -right-1 w-2 h-2 border-b-2 border-r-2 border-[#30363d] group-hover:border-[#00ff88] transition-colors"></div>
+                            </div>
+                            
+                            <div className="text-left">
+                                <h3 className="text-xl font-bold text-white font-mono mb-1 group-hover:text-[#00ff88] transition-colors">
+                                    FULL_DOSSIER.PDF
+                                </h3>
+                                <div className="flex items-center gap-2 text-xs text-[#8b949e] font-mono">
+                                    <span>SIZE: 2.4MB</span>
+                                    <span className="text-[#30363d]">|</span>
+                                    <span>ENCRYPTED</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* Bottom Action Bar */}
+                        <div className="bg-[#0d1117]/80 px-6 py-3 flex justify-between items-center border-t border-[#30363d]">
+                            <div className="text-[10px] text-[#57606a] font-mono leading-tight">
+                                ID: ZYX-2025-V2<br/>
+                                LOC: SHANGHAI_NODE
+                            </div>
+                            <div className="flex items-center gap-2 text-[#00ff88] text-xs font-bold font-mono uppercase tracking-wider group-hover:translate-x-1 transition-transform">
+                                <Download size={14} />
+                                Initialize
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
+            
+            <p className="mt-8 text-[#57606a] dark:text-[#8b949e] text-xs font-mono tracking-wide">
+               * Tap card to decrypt holographic credentials
+            </p>
         </div>
+
+        <style>{`
+          @keyframes scan {
+            0% { top: 0%; opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { top: 100%; opacity: 0; }
+          }
+        `}</style>
       </section>
     );
   }
